@@ -1,11 +1,12 @@
 # VClip - AI 视频切片工作台
 
+<p align="right">
+  <a href="https://mp.weixin.qq.com/s/qblixxBs2pKeME8HrEfqFA"><img src="docs/images/wechat-qr.png" width="150" alt="微信扫码获取绿色包"></a>
+</p>
+
 基于 **本地语音识别 + AI 大模型总结** 的智能视频切片桌面软件。
 
 ![Tech](https://img.shields.io/badge/Electron-33-blue) ![Tech](https://img.shields.io/badge/React-18-blue) ![Tech](https://img.shields.io/badge/AntDesign-5-blue)
-
-> 📱 **不想自己编译？** Windows 免安装便携版（绿色包）不随仓库发布，可通过微信公众号获取 ——
-> 扫码或点这里：<https://mp.weixin.qq.com/s/qblixxBs2pKeME8HrEfqFA>
 
 ## ✨ 核心功能
 
@@ -48,20 +49,6 @@
 >
 > 所以从这里拿到代码后，需要你**在自己的机器上手动安装依赖并构建**。
 > 完整步骤（含每一步的踩坑说明）见 **[docs/INSTALL.md](docs/INSTALL.md)**。
-
-### 🎁 不想自己构建？扫码取绿色包
-
-<p align="left">
-  <a href="https://mp.weixin.qq.com/s/qblixxBs2pKeME8HrEfqFA">
-    <img src="docs/images/wechat-qr.png" width="180" alt="VClip 微信公众号二维码">
-  </a>
-</p>
-
-**微信扫一扫关注公众号**，即可获取 **Windows 免安装便携版（绿色包）** —— 解压就能跑，不用装 Node.js、不用敲命令；
-同步收到版本更新与打包说明。公众号文章直达：<https://mp.weixin.qq.com/s/qblixxBs2pKeME8HrEfqFA>
-
-> 绿色包与本机构建的产物完全一致（`win-unpacked/` 目录），只是把「装依赖 + 打包」这两步替你做完了；
-> 想要源码、想自己改、或需要 macOS 版，还是按下面的步骤在本机构建。
 
 | 项目 | 要求 |
 | --- | --- |
@@ -350,25 +337,5 @@ npm run scan:key
 | AI 分析（短视频/贫乏内容） | 切片数 ≥ 1（禁止空数组 + 规则兜底），`source` 为 `ai` 或 `rule` |
 | 未配置 LLM | 报「请先在设置中配置 AI (LLM) API Key」，而非崩溃 |
 | 制作方信息栏 | 所有页面**顶部与底部**固定显示制作方信息（不随内容滚动）；包内 asar 含「莹百游素材铺」「zyyzing」标记 |
-
----
-
-## 📱 关注公众号，获取绿色包
-
-<p align="center">
-  <a href="https://mp.weixin.qq.com/s/qblixxBs2pKeME8HrEfqFA">
-    <img src="docs/images/wechat-qr.png" width="200" alt="VClip 微信公众号二维码">
-  </a>
-</p>
-
-<p align="center">
-  <b>微信扫码关注公众号</b><br>
-  获取 Windows 免安装便携版（绿色包）、版本更新与打包说明<br>
-  <a href="https://mp.weixin.qq.com/s/qblixxBs2pKeME8HrEfqFA">https://mp.weixin.qq.com/s/qblixxBs2pKeME8HrEfqFA</a>
-</p>
-
-- **绿色包**：解压即用，免安装 Node.js、免构建，和本机 `npm run dist:win` 产出的 `win-unpacked/` 完全一致
-- **源码**：仍然以本仓库为准（MIT），想改代码、想自己打包、要 macOS 版，按上面的「📦 安装」走
-- 仓库里**永远不会有 exe / 绿色包 / 模型权重**，请只从公众号或自己构建获取，别用来路不明的二次打包件
 
 
