@@ -1,0 +1,46 @@
+node_modules/
+out/
+dist/
+*.tsbuildinfo
+
+# 本机构建产物：安装包 / 便携版（绿色包）/ 解包目录，一律不入库
+# GitHub 只发布源码，成品包由使用者在自己的机器上构建
+release/
+release-*/
+*.rar
+
+# 打包用的 ffmpeg 二进制缓存（体积大，首次构建由 scripts/beforePack.js 自动收集）
+build/ffmpeg-bin/
+
+test/e2e/userdata/
+test/e2e/build/
+*.log
+.DS_Store
+
+# 编辑器 / 本地 AI 工作记忆（含本机路径等环境信息）
+.vscode/
+.idea/
+.workbuddy/
+
+# 敏感信息：绝不入库（API Key 只在运行时写入用户数据目录）
+.env
+.env.*
+*.pem
+*.key
+*.p12
+settings.json
+
+# 端到端验证的解包产物 / 临时用户目录（可能含密钥副本，绝不入库）
+test/e2e/nsis-x/
+test/e2e/userdata*/
+
+# ASR 单测里解包出来的模型副本（可重新下载，不入库）
+test/asr/sherpa-onnx-*/
+
+# e2e 运行时自动生成的页面与报告
+test/e2e/proto-page3.html
+test/e2e/*-result.json
+test/e2e/result.json
+
+# 本地模型文件（约1.2GB二进制，随 extraResources 打包，不入 git）
+/models/

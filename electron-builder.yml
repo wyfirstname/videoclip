@@ -1,0 +1,50 @@
+appId: com.vclip.app
+productName: VClip
+# beforePack: 脱敏闸门（扫描即将入包的文件）+ 收集 ffmpeg 二进制
+# afterPack: 对已生成的 app.asar 再做一次密钥扫描，双保险
+beforePack: scripts/beforePack.js
+afterPack: scripts/afterPack.js
+directories:
+  output: release/${version}
+# 白名单方式：只打编译产物，源码/脚本/文档/用户数据一律不进包
+# （API Key 只在运行时写入用户数据目录 %APPDATA%/vclip/settings.json，不属于入包范围）
+files:
+  - out/**
+  - "!**/*.map"
+  - "!**/.env*"
+  - "!**/*.pem"
+  - "!**/*.key"
+  - "!**/*.p12"
+  - "!**/*.crt"
+  - "!**/settings.json"
+  - "!**/*.log"
+extraResources:
+  - from: build/ffmpeg-bin
+    to: ffmpeg-bin
+  # 预置语音识别模型（随包安装，免下载）。
+  # 排除运行时用不到的大文件：model.onnx 为全精度版（代码只用 model.int8.onnx），
+  # test_wavs/export-onnx.py 为上游发布附带的示例与脚本 —— 排除后模型约占 320MB。
+  - from: models
+    to: models
+    filter:
+      - "**/*"
+      - "!**/model.onnx"
+      - "!**/test_wavs/**"
+      - "!**/export-onnx.py"
+asarUnpack:
+  - "**/node_modules/sherpa-onnx-node/**"
+  - "**/node_modules/sherpa-onnx-*/**"
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+mac:
+  target: dmg
+  category: public.app-category.video
+# 注意：不要配置 electronLanguages —— 配置后 electron-builder 打包时会递归删除
+# 其余语言的 .pak 文件，在受删除保护的环境里会触发 SAFE_DELETE_BULK_CONFIRM_REQUIRED
+# 直接中断打包；保留全部语言文件仅多占约 20MB。

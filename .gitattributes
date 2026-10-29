@@ -1,0 +1,21 @@
+# 统一按内容自动判定文本/二进制；跨平台换行交给 git 处理
+* text=auto
+
+# 二进制资产：禁止任何换行/编码转换，否则文件会损坏
+*.onnx  binary
+*.wav   binary
+*.mp3   binary
+*.mp4   binary
+*.png   binary
+*.jpg   binary
+*.ico   binary
+*.icns  binary
+*.exe   binary
+*.dll   binary
+*.node  binary
+*.asar  binary
+
+# 脚本换行：Windows 批处理必须保留 CRLF
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.sh    text eol=lf
