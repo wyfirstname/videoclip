@@ -1,7 +1,8 @@
 # VClip - AI 视频切片工作台
 
 <p align="right">
-  <a href="https://mp.weixin.qq.com/s/qblixxBs2pKeME8HrEfqFA"><img src="docs/images/wechat-qr.png" width="150" alt="微信扫码获取绿色包"></a>
+  <a href="https://mp.weixin.qq.com/s/qblixxBs2pKeME8HrEfqFA"><img src="docs/images/wechat-qr.png" width="150" alt="微信扫码获取绿色包"></a><br>
+  <sub>微信扫码关注公众号，获取 Windows 绿色包（免安装版）</sub>
 </p>
 
 基于 **本地语音识别 + AI 大模型总结** 的智能视频切片桌面软件。
