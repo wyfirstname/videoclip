@@ -174,7 +174,8 @@ npm run verify:dist    # 发布验收：从安装包内层解出 app.asar，字�
 | --- | --- |
 | [docs/INSTALL.md](docs/INSTALL.md) | **从源码手动安装的全流程**：环境要求、依赖镜像、FFmpeg、模型放置、打包、数据目录、排错 |
 | [docs/QUICKSTART.md](docs/QUICKSTART.md) | 快速上手三步走 + Windows 打包踩坑记录（winCodeSign / 缓存根目录） |
-| [docs/BLOG.md](docs/BLOG.md) | 项目介绍博文：技术选型、六个关键实现细节、踩坑清单（含截图） |
+| [docs/BLOG.md](docs/BLOG.md) | 项目介绍博文：技术选型、六个关键实现细节、踩坑清单（含 7 张真实运行截图） |
+| [docs/BLOG.standalone.md](docs/BLOG.standalone.md) | 同一篇博文的**自包含版**：截图以 base64 内嵌，单文件即可完整显示，适合粘到不支持本地上传图片的编辑器 |
 | [CHANGELOG.md](CHANGELOG.md) | 版本变更记录 |
 
 ## ❓ 常见问题（实测记录）
