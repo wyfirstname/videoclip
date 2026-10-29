@@ -23,6 +23,20 @@
    - **全部字幕导出**：字幕页支持一键导出整份字幕为 SRT / 带时间码文本 / JSON（统一带 UTF-8 BOM，中文不会乱码），也可一键复制全部字幕；支持按内容搜索定位
 5. **跨平台打包**：electron-builder 支持 Windows (NSIS 安装包) 与 macOS (DMG)
 
+## 🖼️ 界面预览
+
+![主界面](docs/images/02-project.png)
+
+*播放器 + 预监画面 + 双轨时间轴（字幕轨 / 切片轨）+ 底部「字幕 / 切片 / 导出」面板*
+
+![悬停缩略预览](docs/images/03-hover.png)
+
+*鼠标滑过时间轴即显示该时刻的画面、时间码与字幕原文；右侧预监可切换"跟随鼠标 / 跟随播放头"*
+
+![AI 切片结果](docs/images/04-clips.png)
+
+*AI 切出的候选：标题、起止时间、摘要、推荐理由与评分，卡片开关控制是否参与导出*
+
 ## 📦 安装（从源码手动安装）
 
 > ⚠️ **本仓库只发布源代码。** 仓库里**没有** Windows 安装包，**没有**免安装便携版（绿色包 `win-unpacked/`），
@@ -160,6 +174,7 @@ npm run verify:dist    # 发布验收：从安装包内层解出 app.asar，字�
 | --- | --- |
 | [docs/INSTALL.md](docs/INSTALL.md) | **从源码手动安装的全流程**：环境要求、依赖镜像、FFmpeg、模型放置、打包、数据目录、排错 |
 | [docs/QUICKSTART.md](docs/QUICKSTART.md) | 快速上手三步走 + Windows 打包踩坑记录（winCodeSign / 缓存根目录） |
+| [docs/BLOG.md](docs/BLOG.md) | 项目介绍博文：技术选型、六个关键实现细节、踩坑清单（含截图） |
 | [CHANGELOG.md](CHANGELOG.md) | 版本变更记录 |
 
 ## ❓ 常见问题（实测记录）
